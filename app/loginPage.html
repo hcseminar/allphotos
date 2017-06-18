@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            loginPage
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- Enable all requests, inline styles, and eval() -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready data:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <link href="../css/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="../css/theme/flat-ui/flat-ui.css" rel="stylesheet" />
+        <link href="../libs/jquerymobile/1.4.5/jquery.mobile.structure-1.4.5.css" rel="stylesheet"
+        />
+        <link type="text/css" rel="stylesheet" href="../css/CSS1.css" />
+        <script type="text/javascript" src="../libs/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="../libs/store/json2.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="../libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.js">
+        </script>
+        <script type="text/javascript" src="../libs/apperyio/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="../libs/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/q/q.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/EventEmitter.js/EventEmitter.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/tv4/tv4.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/dist/localforage.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-setitems/localforage-setitems.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-find/localforage-find.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/crypto-js-md5/crypto-js-md5.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/moment/moment.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/underscore-query/underscore-query.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/offline/offline.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/appery.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/login.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="../libs/cordova.js">
+        </script>
+        <link href="../libs/apperyio/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/services/model.js">
+        </script>
+        <script type="text/javascript" src="../js/general.js">
+        </script>
+        <script type="text/javascript" src="../js/thumbnail.js">
+        </script>
+        <script type="text/javascript" src="../js/services/service.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/databaseUtils.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="loginPage" id="loginPage"
+        class="type-interior" data-theme="f">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="c" name="mobileheader" id="loginPage_mobileheader" class="greyFont  loginPage_mobileheader">
+                <h1 dsid="mobileheader">
+                    HC Rome 2017
+                </h1>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="loginPage_mobilecontainer" name="mobilecontainer" class="loginPage_mobilecontainer ui-content"
+            dsid="mobilecontainer" data-theme="f">
+                <link href="loginPage.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="loginPage.js">
+                </script>
+                <!-- mobilegrid_3 -->
+                <div class="loginPage_mobilegrid_3_wrapper" data-wrapper-for="mobilegrid_3">
+                    <table id="loginPage_mobilegrid_3" class="loginPage_mobilegrid_3" dsid="mobilegrid_3"
+                    name="mobilegrid_3" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:203px;" />
+                        <col style="width:auto;" />
+                        <tr class="loginPage_mobilegrid_3_row_0">
+                            <!-- mobilegridcell_4 -->
+                            <td id="loginPage_mobilegridcell_4" name="mobilegridcell_4" class="loginPage_mobilegridcell_4"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_5 -->
+                            <td id="loginPage_mobilegridcell_5" name="mobilegridcell_5" class="loginPage_mobilegridcell_5"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobileimage_9 -->
+                                    <img class="loginPage_mobileimage_9" src="../img/hcLogo.jpg" id="loginPage_mobileimage_9"
+                                    dsid="mobileimage_9" name="mobileimage_9" />
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_8 -->
+                            <td id="loginPage_mobilegridcell_8" name="mobilegridcell_8" class="loginPage_mobilegridcell_8"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- mobilegrid_42 -->
+                <div class="loginPage_mobilegrid_42_wrapper" data-wrapper-for="mobilegrid_42">
+                    <table id="loginPage_mobilegrid_42" class="loginPage_mobilegrid_42" dsid="mobilegrid_42"
+                    name="mobilegrid_42" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:175px;" />
+                        <col style="width:auto;" />
+                        <tr class="loginPage_mobilegrid_42_row_0">
+                            <!-- mobilegridcell_43 -->
+                            <td id="loginPage_mobilegridcell_43" name="mobilegridcell_43" class="loginPage_mobilegridcell_43"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_44 -->
+                            <td id="loginPage_mobilegridcell_44" name="mobilegridcell_44" class="loginPage_mobilegridcell_44"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- html_40 -->
+                                    <div data-role="appery_html" name="html_40" dsid="html_40" id="loginPage_html_40"
+                                    class="loginPage_html_40">
+                                        <script>
+                                        window.twttr = (function(d, s, id)
+{
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f)
+    {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));
+                                        </script>
+                                        <div>
+                                            <center>
+                                            </center>
+                                            <a class="twitter-follow-button" href="https://twitter.com/hc_seminar" data-size="large"
+                                            data-show-count="false">
+                                            Follow @hc_seminar</a>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_47 -->
+                            <td id="loginPage_mobilegridcell_47" name="mobilegridcell_47" class="loginPage_mobilegridcell_47"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- signUpInputGrid -->
+                <div class="loginPage_signUpInputGrid_wrapper" data-wrapper-for="signUpInputGrid">
+                    <table id="loginPage_signUpInputGrid" class="loginPage_signUpInputGrid" dsid="signUpInputGrid"
+                    name="signUpInputGrid" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <tr class="loginPage_signUpInputGrid_row_0">
+                            <!-- mobilegridcell_16 -->
+                            <td id="loginPage_mobilegridcell_16" name="mobilegridcell_16" class="loginPage_mobilegridcell_16"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- nameInput -->
+                                    <div data-role="fieldcontain" class="loginPage_nameInput ">
+                                        <input type="text" name="nameInput" dsid="nameInput" value="" placeholder="Name"
+                                        id="loginPage_nameInput" tabindex="1" multiple data-theme="f" class="loginPage_nameInput"
+                                        />
+                                    </div>
+                                    <!-- firstnameInput -->
+                                    <div data-role="fieldcontain" class="loginPage_firstnameInput ">
+                                        <input type="text" name="firstnameInput" dsid="firstnameInput" value="" placeholder="Firstname"
+                                        id="loginPage_firstnameInput" tabindex="3" multiple data-theme="f" class="loginPage_firstnameInput"
+                                        />
+                                    </div>
+                                    <!-- pwInput -->
+                                    <div data-role="fieldcontain" class="loginPage_pwInput ">
+                                        <input type="password" name="pwInput" dsid="pwInput" value="" placeholder="password (comes with the QRcode)"
+                                        id="loginPage_pwInput" tabindex="6" multiple data-theme="f" class="loginPage_pwInput"
+                                        />
+                                    </div>
+                                    <!-- mobilelabel_12 -->
+                                    <div name="mobilelabel_12" id="loginPage_mobilelabel_12" dsid="mobilelabel_12" data-role="appery_label"
+                                    class="loginPage_mobilelabel_12">
+                                        By signing in, I agree to keep the information available through this app confidential,
+                                        as well as using this app within the scope of the Hachette Collections 2017 Seminar
+                                        only.
+                                    </div>
+                                    <!-- mobilebutton_10 --><!--
+                                    --><a data-role="button" name="mobilebutton_10" dsid="mobilebutton_10" class="loginPage_mobilebutton_10"
+                                    id="loginPage_mobilebutton_10" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                                    x-apple-data-detectors="false" data-mini="false" data-theme="f" tabindex="2">
+                                    Sign in
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- loginPageNavGrid -->
+                <div class="loginPage_loginPageNavGrid_wrapper" data-wrapper-for="loginPageNavGrid">
+                    <table id="loginPage_loginPageNavGrid" class="loginPage_loginPageNavGrid" dsid="loginPageNavGrid"
+                    name="loginPageNavGrid" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <tr class="loginPage_loginPageNavGrid_row_0">
+                            <!-- mobilegridcell_14 -->
+                            <td id="loginPage_mobilegridcell_14" name="mobilegridcell_14" class="loginPage_mobilegridcell_14"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- uploadPicButton --><!--
+                                    --><a data-role="button" name="uploadPicButton" dsid="uploadPicButton" class="greyFont  loginPage_uploadPicButton"
+                                    id="loginPage_uploadPicButton" data-corners="true" data-icon="action" data-iconpos="left"
+                                    x-apple-data-detectors="false" data-mini="false" data-theme="c" tabindex="4">
+                                    upload pictures
+                                    </a><!--
+                                    --><!-- quizButton --><!--
+                                    --><a data-role="button" name="quizButton" dsid="quizButton" class="greyFont  loginPage_quizButton"
+                                    id="loginPage_quizButton" data-corners="true" data-icon="user" data-iconpos="left"
+                                    x-apple-data-detectors="false" data-mini="false" data-theme="c" tabindex="5">
+                                    picture viewer
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- mobilelabel_41 -->
+                <div name="mobilelabel_41" id="loginPage_mobilelabel_41" dsid="mobilelabel_41" data-role="appery_label"
+                class="loginPage_mobilelabel_41">
+                    Show this QRcode to your colleagues to help them getting in!
+                </div>
+                <!-- mobilegrid_17 -->
+                <div class="loginPage_mobilegrid_17_wrapper" data-wrapper-for="mobilegrid_17">
+                    <table id="loginPage_mobilegrid_17" class="loginPage_mobilegrid_17" dsid="mobilegrid_17"
+                    name="mobilegrid_17" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:150px;" />
+                        <col style="width:auto;" />
+                        <tr class="loginPage_mobilegrid_17_row_0">
+                            <!-- mobilegridcell_18 -->
+                            <td id="loginPage_mobilegridcell_18" name="mobilegridcell_18" class="loginPage_mobilegridcell_18"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_19 -->
+                            <td id="loginPage_mobilegridcell_19" name="mobilegridcell_19" class="loginPage_mobilegridcell_19"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobileimage_24 -->
+                                    <img class="loginPage_mobileimage_24" src="../img/static_qr_code_without_logo.jpg"
+                                    id="loginPage_mobileimage_24" dsid="mobileimage_24" name="mobileimage_24" />
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_22 -->
+                            <td id="loginPage_mobilegridcell_22" name="mobilegridcell_22" class="loginPage_mobilegridcell_22"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <!-- mobilefooter -->
+            <div data-role="footer" data-position="fixed" class="loginPage_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="loginPage_mobilefooter" data-theme="c">
+            </div>
+            <!-- privateNavPopup -->
+            <div data-role="popup" name="privateNavPopup" dsid="privateNavPopup" id="loginPage_privateNavPopup"
+            class="loginPage_privateNavPopup" data-corners="true" data-dismissible="true" data-overlay-theme=""
+            data-theme="" data-shadow="true" data-tolerance="15,10,15,10">
+                <div class="ui-popup-content-wrapper">
+                    <!-- mobilelabel_33 -->
+                    <div name="mobilelabel_33" id="loginPage_mobilelabel_33" dsid="mobilelabel_33" data-role="appery_label"
+                    class="loginPage_mobilelabel_33">
+                        Private Navigation Mode
+                    </div>
+                    <!-- mobilelabel_34 -->
+                    <div name="mobilelabel_34" id="loginPage_mobilelabel_34" dsid="mobilelabel_34" data-role="appery_label"
+                    class="loginPage_mobilelabel_34">
+                        In order to avoid you keying in again your Name and Firstname as the owner of every
+                        photo you will upload, as well as to make easier the navigation, this web app requires
+                        you to desactivate your &quot;Private Navigation&quot; mode.
+                    </div>
+                    <!-- mobilelabel_35 -->
+                    <div name="mobilelabel_35" id="loginPage_mobilelabel_35" dsid="mobilelabel_35" data-role="appery_label"
+                    class="loginPage_mobilelabel_35">
+                        Please proceed as follows:
+                    </div>
+                    <!-- mobilegrid_26 -->
+                    <div class="loginPage_mobilegrid_26_wrapper" data-wrapper-for="mobilegrid_26">
+                        <table id="loginPage_mobilegrid_26" class="loginPage_mobilegrid_26" dsid="mobilegrid_26"
+                        name="mobilegrid_26" cellpadding=0 cellspacing=0>
+                            <col style="width:auto;" />
+                            <col style="width:180px;" />
+                            <col style="width:auto;" />
+                            <tr class="loginPage_mobilegrid_26_row_0">
+                                <!-- mobilegridcell_27 -->
+                                <td id="loginPage_mobilegridcell_27" name="mobilegridcell_27" class="loginPage_mobilegridcell_27"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                    </div>
+                                </td>
+                                <!-- mobilegridcell_28 -->
+                                <td id="loginPage_mobilegridcell_28" name="mobilegridcell_28" class="loginPage_mobilegridcell_28"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <!-- mobileimage_32 -->
+                                        <img class="loginPage_mobileimage_32" src="../img/toPrivateNavCropped.png" id="loginPage_mobileimage_32"
+                                        dsid="mobileimage_32" name="mobileimage_32" />
+                                        <!-- mobileimage_36 -->
+                                        <img class="loginPage_mobileimage_36" src="../img/privateNav.png" id="loginPage_mobileimage_36"
+                                        dsid="mobileimage_36" name="mobileimage_36" />
+                                    </div>
+                                </td>
+                                <!-- mobilegridcell_31 -->
+                                <td id="loginPage_mobilegridcell_31" name="mobilegridcell_31" class="loginPage_mobilegridcell_31"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- mobilelabel_37 -->
+                    <div name="mobilelabel_37" id="loginPage_mobilelabel_37" dsid="mobilelabel_37" data-role="appery_label"
+                    class="loginPage_mobilelabel_37">
+                        Thank you, and Enjoy!
+                    </div>
+                    <!-- mobilebutton_38 --><!--
+                    --><a data-role="button" name="mobilebutton_38" dsid="mobilebutton_38" class="loginPage_mobilebutton_38"
+                    id="loginPage_mobilebutton_38" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                    x-apple-data-detectors="false" data-mini="true" data-theme="f" tabindex="7">
+                    Got it!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

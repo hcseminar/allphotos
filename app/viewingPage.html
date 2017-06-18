@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            viewingPage
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- Enable all requests, inline styles, and eval() -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready data:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <link href="../css/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="../css/theme/flat-ui/flat-ui.css" rel="stylesheet" />
+        <link href="../libs/jquerymobile/1.4.5/jquery.mobile.structure-1.4.5.css" rel="stylesheet"
+        />
+        <link type="text/css" rel="stylesheet" href="../css/CSS1.css" />
+        <script type="text/javascript" src="../libs/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="../libs/store/json2.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="../libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.js">
+        </script>
+        <script type="text/javascript" src="../libs/apperyio/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="../libs/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/q/q.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/EventEmitter.js/EventEmitter.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/tv4/tv4.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/dist/localforage.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-setitems/localforage-setitems.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-find/localforage-find.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/crypto-js-md5/crypto-js-md5.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/moment/moment.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/underscore-query/underscore-query.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/offline/offline.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/appery.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/login.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="../libs/cordova.js">
+        </script>
+        <link href="../libs/apperyio/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/services/model.js">
+        </script>
+        <script type="text/javascript" src="../js/general.js">
+        </script>
+        <script type="text/javascript" src="../js/thumbnail.js">
+        </script>
+        <script type="text/javascript" src="../js/services/service.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/databaseUtils.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="viewingPage" id="viewingPage"
+        class="type-interior" data-theme="f">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="inline" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="c" name="mobileheader" id="viewingPage_mobileheader" class="greyFont  viewingPage_mobileheader">
+                <h1 dsid="mobileheader">
+                    photo viewer
+                </h1>
+                <!-- mobilebutton_11 --><!--
+                --><a data-role="button" name="mobilebutton_11" dsid="mobilebutton_11" class="greyFont viewerUploadButton  viewingPage_mobilebutton_11 ui-btn-left"
+                id="viewingPage_mobilebutton_11" data-corners="true" data-icon="carat-l" data-iconpos="left"
+                x-apple-data-detectors="false" data-inline='true' data-mini='true' data-theme="c"
+                tabindex="4">
+                uploader
+                </a><!--
+                --><!-- mobilebutton_18 --><!--
+                --><a data-role="button" name="mobilebutton_18" dsid="mobilebutton_18" class="greyFont  viewingPage_mobilebutton_18 ui-btn-right"
+                id="viewingPage_mobilebutton_18" data-corners="true" data-icon="carat-d" data-iconpos="right"
+                x-apple-data-detectors="false" data-inline='true' data-mini='true' data-theme="c"
+                tabindex="9">
+                sort
+                </a>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="viewingPage_mobilecontainer" name="mobilecontainer"
+            class="viewingPage_mobilecontainer ui-content" dsid="mobilecontainer" data-theme="f">
+                <link href="viewingPage.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="viewingPage.js">
+                </script>
+                <!-- html_12 -->
+                <div data-role="appery_html" name="html_12" dsid="html_12" id="viewingPage_html_12"
+                class="viewingPage_html_12">
+                    <html>
+                        
+                        <body>
+                            <div id="photoViewer" class="viewerGeneral">
+                                <div>
+                                    Please press load,
+                                    <br>
+                                    enter criterias,
+                                    <br>
+                                    and get great pictures!
+                                </div>
+                        </body>
+                    
+                    </html>
+                    </div>
+                </div>
+                <!-- mobilefooter -->
+                <div data-role="footer" data-position="inline" class="viewingPage_mobilefooter"
+                name="mobilefooter" dsid="mobilefooter" id="viewingPage_mobilefooter" data-theme="c">
+                </div>
+                <!-- loadPopup -->
+                <div data-role="popup" name="loadPopup" dsid="loadPopup" id="viewingPage_loadPopup"
+                class="viewingPage_loadPopup" data-corners="true" data-dismissible="true" data-overlay-theme=""
+                data-theme="" data-shadow="true" data-tolerance="30,15,30,15">
+                    <div class="ui-popup-content-wrapper">
+                        <!-- mobilegrid_34 -->
+                        <div class="viewingPage_mobilegrid_34_wrapper" data-wrapper-for="mobilegrid_34">
+                            <table id="viewingPage_mobilegrid_34" class="sortOptionBox roundCornerGrid  viewingPage_mobilegrid_34"
+                            dsid="mobilegrid_34" name="mobilegrid_34" cellpadding=0 cellspacing=0>
+                                <col style="width:auto;" />
+                                <tr class="viewingPage_mobilegrid_34_row_0">
+                                    <!-- mobilegridcell_35 -->
+                                    <td id="viewingPage_mobilegridcell_35" name="mobilegridcell_35" class="viewingPage_mobilegridcell_35"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_22 -->
+                                            <div name="mobilelabel_22" id="viewingPage_mobilelabel_22" dsid="mobilelabel_22"
+                                            data-role="appery_label" class="viewingPage_mobilelabel_22">
+                                                Load all pictures, or enter criterias
+                                            </div>
+                                            <!-- ownerParamInput -->
+                                            <div data-role="fieldcontain" class="viewingPage_ownerParamInput ">
+                                                <input type="text" name="ownerParamInput" dsid="ownerParamInput" value="" placeholder="owner"
+                                                id="viewingPage_ownerParamInput" tabindex="6" multiple data-theme="f" class="viewingPage_ownerParamInput"
+                                                />
+                                            </div>
+                                            <!-- tagParamInput -->
+                                            <div data-role="fieldcontain" class="viewingPage_tagParamInput ">
+                                                <input type="text" name="tagParamInput" dsid="tagParamInput" value="" placeholder="single tag"
+                                                id="viewingPage_tagParamInput" tabindex="7" multiple data-theme="f" class="viewingPage_tagParamInput"
+                                                />
+                                            </div>
+                                            <!-- mobilebutton_17 --><!--
+                                            --><a data-role="button" name="mobilebutton_17" dsid="mobilebutton_17" class="greyFont  viewingPage_mobilebutton_17"
+                                            id="viewingPage_mobilebutton_17" data-corners="true" data-icon="refresh" data-iconpos="left"
+                                            x-apple-data-detectors="false" data-mini="true" data-theme="c" tabindex="8">
+                                            load
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- mobilegrid_49 -->
+                        <div class="viewingPage_mobilegrid_49_wrapper" data-wrapper-for="mobilegrid_49">
+                            <table id="viewingPage_mobilegrid_49" class="sortOptionBox roundCornerGrid  viewingPage_mobilegrid_49"
+                            dsid="mobilegrid_49" name="mobilegrid_49" cellpadding=0 cellspacing=0>
+                                <col style="width:auto;" />
+                                <tr class="viewingPage_mobilegrid_49_row_0">
+                                    <!-- mobilegridcell_50 -->
+                                    <td id="viewingPage_mobilegridcell_50" name="mobilegridcell_50" class="viewingPage_mobilegridcell_50"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_33 -->
+                                            <div name="mobilelabel_33" id="viewingPage_mobilelabel_33" dsid="mobilelabel_33"
+                                            data-role="appery_label" class="viewingPage_mobilelabel_33">
+                                                Get only the best 10 Liked-pictures
+                                            </div>
+                                            <!-- mobilebutton_20 --><!--
+                                            --><a data-role="button" name="mobilebutton_20" dsid="mobilebutton_20" class="viewingPage_mobilebutton_20"
+                                            id="viewingPage_mobilebutton_20" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                                            x-apple-data-detectors="false" data-mini="true" data-theme="f" tabindex="11">
+                                            &quot;Like&quot; Top10
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <!-- mobilegrid_44 -->
+                        <div class="viewingPage_mobilegrid_44_wrapper" data-wrapper-for="mobilegrid_44">
+                            <table id="viewingPage_mobilegrid_44" class="sortOptionBox roundCornerGrid  viewingPage_mobilegrid_44"
+                            dsid="mobilegrid_44" name="mobilegrid_44" cellpadding=0 cellspacing=0>
+                                <col style="width:auto;" />
+                                <tr class="viewingPage_mobilegrid_44_row_0">
+                                    <!-- mobilegridcell_45 -->
+                                    <td id="viewingPage_mobilegridcell_45" name="mobilegridcell_45" class="viewingPage_mobilegridcell_45"
+                                    colspan=1 rowspan=1>
+                                        <div class="cell-wrapper">
+                                            <!-- mobilelabel_52 -->
+                                            <div name="mobilelabel_52" id="viewingPage_mobilelabel_52" dsid="mobilelabel_52"
+                                            data-role="appery_label" class="viewingPage_mobilelabel_52">
+                                                my selection
+                                            </div>
+                                            <!-- mobilelabel_32 -->
+                                            <div name="mobilelabel_32" id="viewingPage_mobilelabel_32" dsid="mobilelabel_32"
+                                            data-role="appery_label" class="viewingPage_mobilelabel_32">
+                                                Make your personal selection
+                                            </div>
+                                            <!-- mobilegrid_24 -->
+                                            <div class="viewingPage_mobilegrid_24_wrapper" data-wrapper-for="mobilegrid_24">
+                                                <table id="viewingPage_mobilegrid_24" class="viewingPage_mobilegrid_24" dsid="mobilegrid_24"
+                                                name="mobilegrid_24" cellpadding=0 cellspacing=0>
+                                                    <col style="width:auto;" />
+                                                    <col style="width:150px;" />
+                                                    <col style="width:auto;" />
+                                                    <tr class="viewingPage_mobilegrid_24_row_0">
+                                                        <!-- mobilegridcell_25 -->
+                                                        <td id="viewingPage_mobilegridcell_25" name="mobilegridcell_25" class="viewingPage_mobilegridcell_25"
+                                                        colspan=1 rowspan=1>
+                                                            <div class="cell-wrapper">
+                                                            </div>
+                                                        </td>
+                                                        <!-- mobilegridcell_26 -->
+                                                        <td id="viewingPage_mobilegridcell_26" name="mobilegridcell_26" class="viewingPage_mobilegridcell_26"
+                                                        colspan=1 rowspan=1>
+                                                            <div class="cell-wrapper">
+                                                                <!-- mobileimage_31 -->
+                                                                <img class="viewingPage_mobileimage_31" src="../img/selectTuto.png" id="viewingPage_mobileimage_31"
+                                                                dsid="mobileimage_31" name="mobileimage_31" />
+                                                            </div>
+                                                        </td>
+                                                        <!-- mobilegridcell_29 -->
+                                                        <td id="viewingPage_mobilegridcell_29" name="mobilegridcell_29" class="viewingPage_mobilegridcell_29"
+                                                        colspan=1 rowspan=1>
+                                                            <div class="cell-wrapper">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                            <!-- mobilebutton_21 --><!--
+                                            --><a data-role="button" name="mobilebutton_21" dsid="mobilebutton_21" class="greyFont  viewingPage_mobilebutton_21"
+                                            id="viewingPage_mobilebutton_21" data-corners="true" data-icon="star" data-iconpos="left"
+                                            x-apple-data-detectors="false" data-mini="true" data-theme="c" tabindex="12">
+                                            My Selection
+                                            </a><!--
+                                            --><!-- mobilegrid_53 -->
+                                            <div class="viewingPage_mobilegrid_53_wrapper" data-wrapper-for="mobilegrid_53">
+                                                <table id="viewingPage_mobilegrid_53" class="viewingPage_mobilegrid_53" dsid="mobilegrid_53"
+                                                name="mobilegrid_53" cellpadding=0 cellspacing=0>
+                                                    <col style="width:auto;" />
+                                                    <col style="width:auto;" />
+                                                    <tr class="viewingPage_mobilegrid_53_row_0">
+                                                        <!-- mobilegridcell_54 -->
+                                                        <td id="viewingPage_mobilegridcell_54" name="mobilegridcell_54" class="viewingPage_mobilegridcell_54"
+                                                        colspan=1 rowspan=1>
+                                                            <div class="cell-wrapper">
+                                                            </div>
+                                                        </td>
+                                                        <!-- mobilegridcell_55 -->
+                                                        <td id="viewingPage_mobilegridcell_55" name="mobilegridcell_55" class="viewingPage_mobilegridcell_55"
+                                                        colspan=1 rowspan=1>
+                                                            <div class="cell-wrapper">
+                                                                <!-- mobilebutton_51 --><!--
+                                                                --><a data-role="button" name="mobilebutton_51" dsid="mobilebutton_51" class="greyFont  viewingPage_mobilebutton_51"
+                                                                id="viewingPage_mobilebutton_51" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                                                                x-apple-data-detectors="false" data-mini="true" data-theme="c" tabindex="13">
+                                                                mosaic view
+                                                                </a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- mosaicViewPopup -->
+                <div data-role="popup" name="mosaicViewPopup" dsid="mosaicViewPopup" id="viewingPage_mosaicViewPopup"
+                class="rotateParent  viewingPage_mosaicViewPopup" data-corners="true" data-dismissible="true"
+                data-overlay-theme="" data-theme="" data-shadow="true" data-tolerance="30,15,30,15">
+                    <div class="ui-popup-content-wrapper">
+                        <!-- mosaicViewerImg -->
+                        <img class="viewingPage_mosaicViewerImg" src="../libs/apperyio/img/no-image.jpg"
+                        id="viewingPage_mosaicViewerImg" dsid="mosaicViewerImg" name="mosaicViewerImg" />
+                        <!-- mobilebutton_60 --><!--
+                        --><a data-role="button" name="mobilebutton_60" dsid="mobilebutton_60" class="viewingPage_mobilebutton_60"
+                        id="viewingPage_mobilebutton_60" data-corners="true" data-icon="delete" data-iconpos="left"
+                        x-apple-data-detectors="false" data-mini="true" data-theme="c" tabindex="14">
+                        close
+                        </a>
+                    </div>
+                </div>
+                <!-- mosaicViewCaptionPopup -->
+                <div data-role="popup" name="mosaicViewCaptionPopup" dsid="mosaicViewCaptionPopup"
+                id="viewingPage_mosaicViewCaptionPopup" class="viewingPage_mosaicViewCaptionPopup"
+                data-corners="true" data-dismissible="true" data-overlay-theme="" data-theme="" data-shadow="true"
+                data-tolerance="30,15,30,15">
+                    <div class="ui-popup-content-wrapper">
+                        <!-- html_62 -->
+                        <div data-role="appery_html" name="html_62" dsid="html_62" id="viewingPage_html_62"
+                        class="viewingPage_html_62">
+                            <div id="mosaicViewCaption">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </body>
+
+</html>

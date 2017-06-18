@@ -1,0 +1,385 @@
+
+/* Define default spinner */
+.ui-icon-loading {
+	background: url("../libs/jquerymobile/1.4.5/images/ajax-loader.gif") repeat scroll 0 0 / 46px 46px transparent!important;
+}
+/* mobilecontainer */
+.ui-content.loginPage_mobilecontainer {
+	padding: 15px 15px 15px 15px;
+}
+/* mobilegrid_3 */
+.loginPage_mobilegrid_3 {
+	height: auto;
+	width:100%;
+	margin: 4px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_mobilegrid_3_wrapper {
+
+}
+.loginPage_mobilegrid_3 > tr > td {
+	vertical-align: top;
+}
+.loginPage_mobilegrid_3_row_0, .loginPage_mobilegrid_3_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_4 */
+.loginPage_mobilegridcell_4 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_4 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilegridcell_5 */
+.loginPage_mobilegridcell_5 {
+	height:30px !important;
+	width:203px;
+	padding: 0px 0px 0px 0px;
+}
+.loginPage_mobilegridcell_5 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobileimage_9 */
+.loginPage_mobileimage_9 {
+	margin: 4px 0px 4px 0px;
+	width: 203px; height: auto;
+	display: block;
+}
+/* mobilegridcell_8 */
+.loginPage_mobilegridcell_8 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_8 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilegrid_42 */
+.loginPage_mobilegrid_42 {
+	height: auto;
+	width:100%;
+	margin: 4px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_mobilegrid_42_wrapper {
+
+}
+.loginPage_mobilegrid_42 > tr > td {
+	vertical-align: top;
+}
+.loginPage_mobilegrid_42_row_0, .loginPage_mobilegrid_42_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_43 */
+.loginPage_mobilegridcell_43 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_43 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilegridcell_44 */
+.loginPage_mobilegridcell_44 {
+	height:30px !important;
+	width:175px;
+	padding: 0px 0px 0px 0px;
+}
+.loginPage_mobilegridcell_44 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* html_40 */
+.loginPage_html_40 {
+	margin: 15px 0px 0px 0px;
+	font-weight: normal;
+	width: 170px; height: auto;
+}
+div.loginPage_html_40 {
+	overflow: auto;
+}
+/* mobilegridcell_47 */
+.loginPage_mobilegridcell_47 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_47 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* signUpInputGrid */
+.loginPage_signUpInputGrid {
+	height: auto;
+	width:100%;
+	margin: 4px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_signUpInputGrid_wrapper {
+
+}
+.loginPage_signUpInputGrid > tr > td {
+	vertical-align: top;
+}
+.loginPage_signUpInputGrid_row_0, .loginPage_signUpInputGrid_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_16 */
+.loginPage_mobilegridcell_16 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_16 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* nameInput */
+.loginPage_nameInput {
+	margin: 4px 15px 4px 15px;
+}
+/* firstnameInput */
+.loginPage_firstnameInput {
+	margin: 4px 15px 4px 15px;
+}
+/* pwInput */
+.loginPage_pwInput {
+	margin: 4px 15px 4px 15px;
+}
+/* mobilelabel_12 */
+.loginPage_mobilelabel_12 {
+	text-decoration: none; font-weight: normal; font-style: italic; color: #646464; text-align: center; font-family: Helvetica; font-size: 14px;
+	margin: 15px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilebutton_10 */
+#loginPage_mobilebutton_10 {
+
+}
+.ui-btn.loginPage_mobilebutton_10 {
+	margin: 4px 15px 4px 15px;
+}
+/* loginPageNavGrid */
+.loginPage_loginPageNavGrid {
+	height: auto;
+	width:100%;
+	margin: 50px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_loginPageNavGrid_wrapper {
+
+}
+.loginPage_loginPageNavGrid > tr > td {
+	vertical-align: top;
+}
+.loginPage_loginPageNavGrid_row_0, .loginPage_loginPageNavGrid_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_14 */
+.loginPage_mobilegridcell_14 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_14 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* uploadPicButton */
+#loginPage_uploadPicButton {
+
+}
+.ui-btn.loginPage_uploadPicButton {
+	margin: 4px 5px 4px 5px;
+}
+/* quizButton */
+#loginPage_quizButton {
+
+}
+.ui-btn.loginPage_quizButton {
+	margin: 4px 5px 4px 5px;
+}
+/* mobilelabel_41 */
+.loginPage_mobilelabel_41 {
+	text-decoration: none; font-weight: bold; font-style: italic; color: #646464; text-align: center; font-family: Helvetica; font-size: 16px;
+	margin: 25px 20px 4px 20px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilegrid_17 */
+.loginPage_mobilegrid_17 {
+	height: auto;
+	width:100%;
+	margin: 0px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_mobilegrid_17_wrapper {
+
+}
+.loginPage_mobilegrid_17 > tr > td {
+	vertical-align: top;
+}
+.loginPage_mobilegrid_17_row_0, .loginPage_mobilegrid_17_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_18 */
+.loginPage_mobilegridcell_18 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_18 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilegridcell_19 */
+.loginPage_mobilegridcell_19 {
+	height:30px !important;
+	width:150px;
+	padding: 0px 0px 0px 0px;
+}
+.loginPage_mobilegridcell_19 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobileimage_24 */
+.loginPage_mobileimage_24 {
+	margin: 0px 0px 0px 0px;
+	width: 150px; height: auto;
+	display: block;
+}
+/* mobilegridcell_22 */
+.loginPage_mobilegridcell_22 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_22 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilefooter */
+.loginPage_mobilefooter {
+	min-height:38px;
+}
+/* privateNavPopup */
+.loginPage_privateNavPopup {
+	width: 300px;
+}
+div.loginPage_privateNavPopup {
+	max-height: 100vh;
+	box-sizing: border-box;
+}
+div.loginPage_privateNavPopup .ui-popup-content-wrapper {
+	width:100%;
+	height:100%;
+	max-height: 99vh;
+	overflow:auto;
+	box-sizing: border-box;
+}
+/* mobilelabel_33 */
+.loginPage_mobilelabel_33 {
+	text-decoration: none; font-weight: bold; color: #646464; text-align: center; font-family: Helvetica; font-size: 16px;
+	margin: 10px 0px 0px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilelabel_34 */
+.loginPage_mobilelabel_34 {
+	text-decoration: none; font-weight: normal; font-style: italic; color: #646464; text-align: center; font-family: Helvetica; font-size: 16px;
+	margin: 0px 5px 4px 5px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilelabel_35 */
+.loginPage_mobilelabel_35 {
+	text-decoration: none; font-weight: bold; color: #646464; text-align: center; font-family: Helvetica; font-size: 16px;
+	margin: 4px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilegrid_26 */
+.loginPage_mobilegrid_26 {
+	height: auto;
+	width:100%;
+	margin: 4px 0px 4px 0px;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+.loginPage_mobilegrid_26_wrapper {
+
+}
+.loginPage_mobilegrid_26 > tr > td {
+	vertical-align: top;
+}
+.loginPage_mobilegrid_26_row_0, .loginPage_mobilegrid_26_row_0 > td {
+	height: 30px
+}
+/* mobilegridcell_27 */
+.loginPage_mobilegridcell_27 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_27 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilegridcell_28 */
+.loginPage_mobilegridcell_28 {
+	height:30px !important;
+	width:180px;
+	padding: 0px 0px 0px 0px;
+}
+.loginPage_mobilegridcell_28 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobileimage_32 */
+.loginPage_mobileimage_32 {
+	margin: 0px 0px 0px 0px;
+	width: 180px; height: auto;
+	display: block;
+}
+/* mobileimage_36 */
+.loginPage_mobileimage_36 {
+	margin: 10px 0px 0px 0px;
+	width: 180px; height: auto;
+	display: block;
+}
+/* mobilegridcell_31 */
+.loginPage_mobilegridcell_31 {
+	height:30px !important;
+	width:auto;
+	padding: 2px 2px 2px 2px;
+}
+.loginPage_mobilegridcell_31 > .cell-wrapper {
+	padding: 0;
+	margin: 0;
+}
+/* mobilelabel_37 */
+.loginPage_mobilelabel_37 {
+	text-decoration: none; font-weight: normal; font-style: italic; color: #646464; text-align: center; font-family: Helvetica; font-size: 16px;
+	margin: 8px 0px 4px 0px;
+	word-wrap: break-word;
+	white-space: normal;
+}
+/* mobilebutton_38 */
+#loginPage_mobilebutton_38 {
+
+}
+.ui-btn.loginPage_mobilebutton_38 {
+	margin: 4px 30px 10px 30px;
+}

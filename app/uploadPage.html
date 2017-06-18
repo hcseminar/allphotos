@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <title>
+            uploadPage
+        </title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <meta name="msapplication-tap-highlight" content="no">
+        <!-- Enable all requests, inline styles, and eval() -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready data:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <link href="../css/theme/jqm/jqm.css" rel="stylesheet" />
+        <link href="../css/theme/flat-ui/flat-ui.css" rel="stylesheet" />
+        <link href="../libs/jquerymobile/1.4.5/jquery.mobile.structure-1.4.5.css" rel="stylesheet"
+        />
+        <link type="text/css" rel="stylesheet" href="../css/CSS1.css" />
+        <script type="text/javascript" src="../libs/underscore/underscore.js">
+        </script>
+        <script type="text/javascript" src="../libs/store/json2.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-2.1.1.js">
+        </script>
+        <script type="text/javascript" src="../libs/jquery/jquery-ajaxTransport.js">
+        </script>
+        <script type="text/javascript">
+                    $(document).bind("mobileinit", function()
+            {
+                if (navigator.userAgent.toLowerCase().indexOf("android") != -1)
+                {
+                    $.mobile.defaultPageTransition = 'none';
+                    $.mobile.defaultDialogTransition = 'none';
+                }
+                else if (navigator.userAgent.toLowerCase().indexOf("msie") != -1)
+                {
+                    $.mobile.allowCrossDomainPages = true;
+                    $.support.cors = true;
+                }
+                else if (navigator.userAgent.match(/(iPad|iPhone|iPod)/g))
+                {
+                    $.mobile.hashListeningEnabled = false;
+                }
+            });
+        </script>
+        <script type="text/javascript" src="../libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.js">
+        </script>
+        <script type="text/javascript" src="../libs/apperyio/mobilebase.js">
+        </script>
+        <script type="text/javascript" src="../libs/event/customEventHandler.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/sha1.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/oauth.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/contexts.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/jquery.xml2json.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/q/q.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/EventEmitter.js/EventEmitter.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/tv4/tv4.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/dist/localforage.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-setitems/localforage-setitems.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/localforage/plugins/localforage-find/localforage-find.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/crypto-js-md5/crypto-js-md5.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/moment/moment.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/underscore-query/underscore-query.min.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/offline/offline.js">
+        </script>
+        <script type="text/javascript" src="../libs/ms_sdk_bundle/client-sdk.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/appery.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/component-manager.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/mapping-impl.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/entity-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/login.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/storage-api.js">
+        </script>
+        <script type="text/javascript" src="../libs/get_target_platform.js">
+        </script>
+        <script type="text/javascript" src="../libs/cordova.js">
+        </script>
+        <link href="../libs/apperyio/mobilebase.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="../js/services/model.js">
+        </script>
+        <script type="text/javascript" src="../js/general.js">
+        </script>
+        <script type="text/javascript" src="../js/thumbnail.js">
+        </script>
+        <script type="text/javascript" src="../js/services/service.js">
+        </script>
+        <script type="text/javascript" src="../libs/base/databaseUtils.js">
+        </script>
+    </head>
+    
+    <body>
+        <script language="JavaScript" type="text/javascript">
+                
+        </script>
+        <div data-role="page" style="min-height:480px;" dsid="uploadPage" id="uploadPage"
+        class="type-interior" data-theme="f">
+            <!-- mobileheader -->
+            <div data-role="header" data-position="fixed" data-add-back-btn="false" data-back-btn-text="Back"
+            data-theme="c" name="mobileheader" id="uploadPage_mobileheader" class="greyFont  uploadPage_mobileheader">
+                <h1 dsid="mobileheader">
+                    uploader
+                </h1>
+                <!-- mobilebutton_5 --><!--
+                --><a data-role="button" name="mobilebutton_5" dsid="mobilebutton_5" class="greyFont  uploadPage_mobilebutton_5 ui-btn-right"
+                id="uploadPage_mobilebutton_5" data-corners="true" data-icon="carat-r" data-iconpos="right"
+                x-apple-data-detectors="false" data-inline='true' data-mini='true' data-theme="c"
+                tabindex="3">
+                viewer
+                </a>
+            </div>
+            <!-- mobilecontainer -->
+            <div data-role="content" id="uploadPage_mobilecontainer" name="mobilecontainer"
+            class="uploadPage_mobilecontainer ui-content" dsid="mobilecontainer" data-theme="f">
+                <link href="uploadPage.css" rel="stylesheet" type="text/css" />
+                <script type="text/javascript" src="uploadPage.js">
+                </script>
+                <!-- mobilegrid_17 -->
+                <div class="uploadPage_mobilegrid_17_wrapper" data-wrapper-for="mobilegrid_17">
+                    <table id="uploadPage_mobilegrid_17" class="uploadPage_mobilegrid_17" dsid="mobilegrid_17"
+                    name="mobilegrid_17" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:150px;" />
+                        <col style="width:auto;" />
+                        <tr class="uploadPage_mobilegrid_17_row_0">
+                            <!-- mobilegridcell_18 -->
+                            <td id="uploadPage_mobilegridcell_18" name="mobilegridcell_18" class="uploadPage_mobilegridcell_18"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_19 -->
+                            <td id="uploadPage_mobilegridcell_19" name="mobilegridcell_19" class="uploadPage_mobilegridcell_19"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobileimage_24 -->
+                                    <img class="uploadPage_mobileimage_24" src="../img/apple-iphone-6s-logo-vector-download-400x400.jpg"
+                                    id="uploadPage_mobileimage_24" dsid="mobileimage_24" name="mobileimage_24" />
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_22 -->
+                            <td id="uploadPage_mobilegridcell_22" name="mobilegridcell_22" class="uploadPage_mobilegridcell_22"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- mobilelabel_7 -->
+                <div name="mobilelabel_7" id="uploadPage_mobilelabel_7" dsid="mobilelabel_7" data-role="appery_label"
+                class="uploadPage_mobilelabel_7">
+                    Take a picture or select one from your Photo Librairy, and share it with your colleagues!
+                </div>
+                <!-- photoInput -->
+                <div data-role="fieldcontain" class="uploadPage_photoInput ">
+                    <input type="file" name="photoInput" dsid="photoInput" value="Input" placeholder=""
+                    id="uploadPage_photoInput" tabindex="1" data-theme="f" class="uploadPage_photoInput"
+                    />
+                </div>
+                <!-- mobilelabel_16 -->
+                <div name="mobilelabel_16" id="uploadPage_mobilelabel_16" dsid="mobilelabel_16"
+                data-role="appery_label" class="uploadPage_mobilelabel_16">
+                    Upload picture files one-by-one.
+                </div>
+                <!-- tagInput -->
+                <div data-role="fieldcontain" class="uploadPage_tagInput ">
+                    <input type="text" name="tagInput" dsid="tagInput" value="" placeholder="tags (names, countries, place, event, ...)"
+                    id="uploadPage_tagInput" tabindex="4" multiple data-theme="f" class="uploadTagInput  uploadPage_tagInput"
+                    />
+                </div>
+                <!-- mobilelabel_6 -->
+                <div name="mobilelabel_6" id="uploadPage_mobilelabel_6" dsid="mobilelabel_6" data-role="appery_label"
+                class="uploadPage_mobilelabel_6">
+                    Your name will be saved with your pictures. Indicate tags to retrieve your pictures
+                    easily.
+                </div>
+                <!-- uploadButton --><!--
+                --><a data-role="button" name="uploadButton" dsid="uploadButton" class="greyFont  uploadPage_uploadButton"
+                id="uploadPage_uploadButton" data-corners="true" data-icon="cloud" data-iconpos="left"
+                x-apple-data-detectors="false" data-mini="false" data-theme="c" tabindex="2">
+                Share
+                </a><!--
+                --><!-- uploadInProgressLabel -->
+                <div name="uploadInProgressLabel" id="uploadPage_uploadInProgressLabel" dsid="uploadInProgressLabel"
+                data-role="appery_label" class="uploadPage_uploadInProgressLabel">
+                    upload in progress ... pls wait
+                </div>
+                <!-- mobilegrid_29 -->
+                <div class="uploadPage_mobilegrid_29_wrapper" data-wrapper-for="mobilegrid_29">
+                    <table id="uploadPage_mobilegrid_29" class="uploadPage_mobilegrid_29" dsid="mobilegrid_29"
+                    name="mobilegrid_29" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:175px;" />
+                        <col style="width:auto;" />
+                        <tr class="uploadPage_mobilegrid_29_row_0">
+                            <!-- mobilegridcell_30 -->
+                            <td id="uploadPage_mobilegridcell_30" name="mobilegridcell_30" class="uploadPage_mobilegridcell_30"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_31 -->
+                            <td id="uploadPage_mobilegridcell_31" name="mobilegridcell_31" class="uploadPage_mobilegridcell_31"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- html_36 -->
+                                    <div data-role="appery_html" name="html_36" dsid="html_36" id="uploadPage_html_36"
+                                    class="uploadPage_html_36">
+                                        <script>
+                                        window.twttr = (function(d, s, id)
+{
+    var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f)
+    {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));
+                                        </script>
+                                        <div>
+                                            <center>
+                                            </center>
+                                            <a class="twitter-follow-button" href="https://twitter.com/hc_seminar" data-size="large"
+                                            data-show-count="false">
+                                            Follow @hc_seminar</a>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_34 -->
+                            <td id="uploadPage_mobilegridcell_34" name="mobilegridcell_34" class="uploadPage_mobilegridcell_34"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- mobilegrid_8 -->
+                <div class="uploadPage_mobilegrid_8_wrapper" data-wrapper-for="mobilegrid_8">
+                    <table id="uploadPage_mobilegrid_8" class="uploadPage_mobilegrid_8" dsid="mobilegrid_8"
+                    name="mobilegrid_8" cellpadding=0 cellspacing=0>
+                        <col style="width:auto;" />
+                        <col style="width:150px;" />
+                        <col style="width:auto;" />
+                        <tr class="uploadPage_mobilegrid_8_row_0">
+                            <!-- mobilegridcell_9 -->
+                            <td id="uploadPage_mobilegridcell_9" name="mobilegridcell_9" class="uploadPage_mobilegridcell_9"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_10 -->
+                            <td id="uploadPage_mobilegridcell_10" name="mobilegridcell_10" class="uploadPage_mobilegridcell_10"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                    <!-- mobileimage_15 -->
+                                    <img class="uploadPage_mobileimage_15" src="../img/static_qr_code_without_logo.jpg"
+                                    id="uploadPage_mobileimage_15" dsid="mobileimage_15" name="mobileimage_15" />
+                                </div>
+                            </td>
+                            <!-- mobilegridcell_13 -->
+                            <td id="uploadPage_mobilegridcell_13" name="mobilegridcell_13" class="uploadPage_mobilegridcell_13"
+                            colspan=1 rowspan=1>
+                                <div class="cell-wrapper">
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <!-- html_85 -->
+                <div data-role="appery_html" name="html_85" dsid="html_85" id="uploadPage_html_85"
+                class="uploadPage_html_85">
+                    <html>
+                        
+                        <body>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td id="thumbnailWrapper">
+                                            <img id="thumbnailImg" src="" width="100" />
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td id="thumbnailParent">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </body>
+                    
+                    </html>
+                </div>
+            </div>
+            <!-- mobilefooter -->
+            <div data-role="footer" data-position="fixed" class="uploadPage_mobilefooter" name="mobilefooter"
+            dsid="mobilefooter" id="uploadPage_mobilefooter" data-theme="c">
+            </div>
+            <!-- uploadSuccessTweetPopup -->
+            <div data-role="popup" name="uploadSuccessTweetPopup" dsid="uploadSuccessTweetPopup"
+            id="uploadPage_uploadSuccessTweetPopup" class="uploadPage_uploadSuccessTweetPopup"
+            data-corners="true" data-dismissible="true" data-overlay-theme="" data-theme="" data-shadow="true"
+            data-tolerance="30,15,30,15">
+                <div class="ui-popup-content-wrapper">
+                    <!-- mobilelabel_26 -->
+                    <div name="mobilelabel_26" id="uploadPage_mobilelabel_26" dsid="mobilelabel_26"
+                    data-role="appery_label" class="uploadPage_mobilelabel_26">
+                        Your picture was successfully uploaded.
+                    </div>
+                    <!-- mobilelabel_28 -->
+                    <div name="mobilelabel_28" id="uploadPage_mobilelabel_28" dsid="mobilelabel_28"
+                    data-role="appery_label" class="uploadPage_mobilelabel_28">
+                        Tweet this to other @hcseminar's participants!
+                    </div>
+                    <!-- mobilebutton_27 --><!--
+                    --><a data-role="button" name="mobilebutton_27" dsid="mobilebutton_27" class="uploadPage_mobilebutton_27"
+                    id="uploadPage_mobilebutton_27" data-corners="true" data-icon="action" data-iconpos="left"
+                    x-apple-data-detectors="false" data-mini="true" data-theme="f" tabindex="5">
+                    Tweet
+                    </a>
+                </div>
+            </div>
+            <!-- uploadPageTutoPopup -->
+            <div data-role="popup" name="uploadPageTutoPopup" dsid="uploadPageTutoPopup" id="uploadPage_uploadPageTutoPopup"
+            class="uploadPage_uploadPageTutoPopup" data-corners="true" data-dismissible="true"
+            data-overlay-theme="" data-theme="" data-shadow="true" data-tolerance="15,15,15,15">
+                <div class="ui-popup-content-wrapper">
+                    <!-- mobilegrid_66 -->
+                    <div class="uploadPage_mobilegrid_66_wrapper" data-wrapper-for="mobilegrid_66">
+                        <table id="uploadPage_mobilegrid_66" class="sortOptionBox roundCornerGrid  uploadPage_mobilegrid_66"
+                        dsid="mobilegrid_66" name="mobilegrid_66" cellpadding=0 cellspacing=0>
+                            <col style="width:auto;" />
+                            <tr class="uploadPage_mobilegrid_66_row_0">
+                                <!-- mobilegridcell_67 -->
+                                <td id="uploadPage_mobilegridcell_67" name="mobilegridcell_67" class="uploadPage_mobilegridcell_67"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <!-- mobilelabel_65 -->
+                                        <div name="mobilelabel_65" id="uploadPage_mobilelabel_65" dsid="mobilelabel_65"
+                                        data-role="appery_label" class="uploadPage_mobilelabel_65">
+                                            How to upload and share pictures
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- mobilegrid_71 -->
+                    <div class="uploadPage_mobilegrid_71_wrapper" data-wrapper-for="mobilegrid_71">
+                        <table id="uploadPage_mobilegrid_71" class="sortOptionBox roundCornerGrid  uploadPage_mobilegrid_71"
+                        dsid="mobilegrid_71" name="mobilegrid_71" cellpadding=0 cellspacing=0>
+                            <col style="width:auto;" />
+                            <tr class="uploadPage_mobilegrid_71_row_0">
+                                <!-- mobilegridcell_72 -->
+                                <td id="uploadPage_mobilegridcell_72" name="mobilegridcell_72" class="uploadPage_mobilegridcell_72"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <!-- mobilelabel_38 -->
+                                        <div name="mobilelabel_38" id="uploadPage_mobilelabel_38" dsid="mobilelabel_38"
+                                        data-role="appery_label" class="uploadPage_mobilelabel_38">
+                                            1) Press &quot;Browse&quot; to access to your Camera or Photo Library/Gallery
+                                        </div>
+                                        <!-- mobilegrid_40 -->
+                                        <div class="uploadPage_mobilegrid_40_wrapper" data-wrapper-for="mobilegrid_40">
+                                            <table id="uploadPage_mobilegrid_40" class="uploadPage_mobilegrid_40" dsid="mobilegrid_40"
+                                            name="mobilegrid_40" cellpadding=0 cellspacing=0>
+                                                <col style="width:auto;" />
+                                                <col style="width:200px;" />
+                                                <col style="width:auto;" />
+                                                <tr class="uploadPage_mobilegrid_40_row_0">
+                                                    <!-- mobilegridcell_41 -->
+                                                    <td id="uploadPage_mobilegridcell_41" name="mobilegridcell_41" class="uploadPage_mobilegridcell_41"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_42 -->
+                                                    <td id="uploadPage_mobilegridcell_42" name="mobilegridcell_42" class="uploadPage_mobilegridcell_42"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <!-- mobileimage_39 -->
+                                                            <img class="uploadPage_mobileimage_39" src="../img/uploadTuto1.png" id="uploadPage_mobileimage_39"
+                                                            dsid="mobileimage_39" name="mobileimage_39" />
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_45 -->
+                                                    <td id="uploadPage_mobilegridcell_45" name="mobilegridcell_45" class="uploadPage_mobilegridcell_45"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- mobilegrid_78 -->
+                    <div class="uploadPage_mobilegrid_78_wrapper" data-wrapper-for="mobilegrid_78">
+                        <table id="uploadPage_mobilegrid_78" class="sortOptionBox roundCornerGrid  uploadPage_mobilegrid_78"
+                        dsid="mobilegrid_78" name="mobilegrid_78" cellpadding=0 cellspacing=0>
+                            <col style="width:auto;" />
+                            <tr class="uploadPage_mobilegrid_78_row_0">
+                                <!-- mobilegridcell_79 -->
+                                <td id="uploadPage_mobilegridcell_79" name="mobilegridcell_79" class="uploadPage_mobilegridcell_79"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <!-- mobilelabel_47 -->
+                                        <div name="mobilelabel_47" id="uploadPage_mobilelabel_47" dsid="mobilelabel_47"
+                                        data-role="appery_label" class="uploadPage_mobilelabel_47">
+                                            2) Key in Tags to find pictures more easily
+                                        </div>
+                                        <!-- mobilegrid_48 -->
+                                        <div class="uploadPage_mobilegrid_48_wrapper" data-wrapper-for="mobilegrid_48">
+                                            <table id="uploadPage_mobilegrid_48" class="uploadPage_mobilegrid_48" dsid="mobilegrid_48"
+                                            name="mobilegrid_48" cellpadding=0 cellspacing=0>
+                                                <col style="width:auto;" />
+                                                <col style="width:200px;" />
+                                                <col style="width:auto;" />
+                                                <tr class="uploadPage_mobilegrid_48_row_0">
+                                                    <!-- mobilegridcell_49 -->
+                                                    <td id="uploadPage_mobilegridcell_49" name="mobilegridcell_49" class="uploadPage_mobilegridcell_49"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_50 -->
+                                                    <td id="uploadPage_mobilegridcell_50" name="mobilegridcell_50" class="uploadPage_mobilegridcell_50"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <!-- mobileimage_54 -->
+                                                            <img class="uploadPage_mobileimage_54" src="../img/upload2.png" id="uploadPage_mobileimage_54"
+                                                            dsid="mobileimage_54" name="mobileimage_54" />
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_53 -->
+                                                    <td id="uploadPage_mobilegridcell_53" name="mobilegridcell_53" class="uploadPage_mobilegridcell_53"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- mobilegrid_83 -->
+                    <div class="uploadPage_mobilegrid_83_wrapper" data-wrapper-for="mobilegrid_83">
+                        <table id="uploadPage_mobilegrid_83" class="sortOptionBox roundCornerGrid  uploadPage_mobilegrid_83"
+                        dsid="mobilegrid_83" name="mobilegrid_83" cellpadding=0 cellspacing=0>
+                            <col style="width:auto;" />
+                            <tr class="uploadPage_mobilegrid_83_row_0">
+                                <!-- mobilegridcell_84 -->
+                                <td id="uploadPage_mobilegridcell_84" name="mobilegridcell_84" class="uploadPage_mobilegridcell_84"
+                                colspan=1 rowspan=1>
+                                    <div class="cell-wrapper">
+                                        <!-- mobilelabel_55 -->
+                                        <div name="mobilelabel_55" id="uploadPage_mobilelabel_55" dsid="mobilelabel_55"
+                                        data-role="appery_label" class="uploadPage_mobilelabel_55">
+                                            3) Share with your colleagues.
+                                        </div>
+                                        <!-- mobilegrid_57 -->
+                                        <div class="uploadPage_mobilegrid_57_wrapper" data-wrapper-for="mobilegrid_57">
+                                            <table id="uploadPage_mobilegrid_57" class="uploadPage_mobilegrid_57" dsid="mobilegrid_57"
+                                            name="mobilegrid_57" cellpadding=0 cellspacing=0>
+                                                <col style="width:auto;" />
+                                                <col style="width:200px;" />
+                                                <col style="width:auto;" />
+                                                <tr class="uploadPage_mobilegrid_57_row_0">
+                                                    <!-- mobilegridcell_58 -->
+                                                    <td id="uploadPage_mobilegridcell_58" name="mobilegridcell_58" class="uploadPage_mobilegridcell_58"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_59 -->
+                                                    <td id="uploadPage_mobilegridcell_59" name="mobilegridcell_59" class="uploadPage_mobilegridcell_59"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                            <!-- mobileimage_64 -->
+                                                            <img class="uploadPage_mobileimage_64" src="../img/upload3.png" id="uploadPage_mobileimage_64"
+                                                            dsid="mobileimage_64" name="mobileimage_64" />
+                                                        </div>
+                                                    </td>
+                                                    <!-- mobilegridcell_62 -->
+                                                    <td id="uploadPage_mobilegridcell_62" name="mobilegridcell_62" class="uploadPage_mobilegridcell_62"
+                                                    colspan=1 rowspan=1>
+                                                        <div class="cell-wrapper">
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- mobilebutton_56 --><!--
+                    --><a data-role="button" name="mobilebutton_56" dsid="mobilebutton_56" class="uploadPage_mobilebutton_56"
+                    id="uploadPage_mobilebutton_56" data-corners="true" data-icon="none" data-iconpos='nowhere'
+                    x-apple-data-detectors="false" data-mini="true" data-theme="f" tabindex="6">
+                    Got It!
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+
+</html>

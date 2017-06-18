@@ -1,0 +1,201 @@
+.roundCornerGrid{
+    border-collapse: separate !important;
+}
+
+.contextDiv{
+    position:relative;
+	z-index: 10;
+}
+.betaDiv {
+    position: absolute;
+    font-family: "Helvetica";
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    padding: 3px;
+    width: 130px;
+    color: #ffffff;
+    background-color: Green;
+    -ms-transform: rotate(-45deg);
+    /* IE 9 */
+    -webkit-transform: rotate(-45deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(-45deg);
+    left: -48px;
+    top: 7px;
+    z-index: 100;
+}
+#quizPage_pwInput{
+    text-align: center;
+}
+.greyFont{
+    color: #646464;
+}
+.viewerGeneral{
+    font-family: "Helvetica";
+    font-style: italic;
+    font-size: 18px;
+    color: #646464;
+    text-align: center;
+    margin-top: 20px;
+}
+.moreButton{
+    width: 120px;
+    font-family: "Helvetica";
+    font-style: italic;    
+    font-size: 16px;
+    color: #646464;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    margin-right: 20px;
+    padding: 3px;
+    background-color:#e6e6e6;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #646464;
+}
+.imgCaption{
+    font-family: "Helvetica";
+    font-style: normal;    
+    font-size: 12px;
+    color: #646464;
+    text-align: center;
+    margin-left: 4px;
+    margin-bottom: 10px;
+}
+/*.uploadTagInput{
+    font-size: 12px;
+}*/
+.viewerUploadButton{
+    padding-right: 4px;
+}
+.photoButton{
+	font-family: "Helvetica";
+	font-size: 12px;
+	font-weight:bold;
+	font-style:normal;
+	text-align: center;
+	border-radius: 5px;
+	width:50px;
+	padding: 4px 3px 4px 3px;
+	margin-left:10px;
+}
+.likeButton{
+	color: #ffffff;
+	background-color: #5987b2;
+}
+/* ROTATE IMG 4 Android = f(iOS orientation) */
+.rotateParent{
+    position:relative;
+}
+/* load all or with criterias view */
+.androidRotate90cw { /* exif code 6 */
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    position:absolute;
+    left: -100px;
+    top:80px;
+    margin-top:15px;
+}
+.iOSrotate90cw { /* exif code 6 */
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    position:absolute;
+    left: -50px;
+    top:5px;
+    margin-top:15px;
+}
+.rotate180 { /* exif code 3 */
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+}
+/* load selected photos as mosaic view */
+.thumbnailStd{
+    margin-left:2px;
+    margin-right:2px;
+}
+.mosaicRotate90cw{
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    position:absolute;
+    left: 0;
+}
+.mosaicRotate180{
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    position:absolute;
+}
+.mosaicLargeRotate90cw { /* exif code 6 */
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+    position:absolute;
+}
+.mosaicLargeRotate180 { /* exif code 3 */
+    -ms-transform: rotate(180deg);
+    /* IE 9 */
+    -webkit-transform: rotate(180deg);
+    /* Chrome, Safari, Opera */
+    transform: rotate(180deg);
+    position:absolute;
+}
+/* selectButton */
+.selectButton{
+    font-family: "Helvetica";
+	font-size: 12px;
+	font-weight:bold;
+	font-style:normal;
+	text-align: center;
+	color: White;
+    background-color: #a2a2a2;
+    border-radius: 12px;
+	width:44px;
+	border: 4px solid;
+	border-color: #e6e6e6;
+	margin-right: 10px;
+	padding: 2px 1px 2px 1px;
+}
+
+.buttonSelected{
+    font-family: "Helvetica";
+	font-size: 12px;
+	font-weight:bold;
+	font-style:normal;
+	text-align: center;
+	color: White;
+    background-color: #be387b;
+    border-radius: 12px;
+	width:44px;
+	border: 4px solid;
+	border-color: #e6e6e6;
+	margin-right: 10px;
+	padding: 2px 1px 2px 1px;
+}
+
+/* load/sort popup */
+.sortOptionBox{
+    background-color: #e6e6e6;
+    border-radius: 10px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: #a2a2a2;
+}
