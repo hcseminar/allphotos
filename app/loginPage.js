@@ -311,7 +311,7 @@ function loginPage_js() {
     var loginPage_onLoad = function() {
             loginPage_elementsExtraJS();
 
-            pastBetaVersionMark("loginPage");
+            // pastBetaVersionMark("loginPage");
             chekSignIn();
             try {
                 // try to use localStorage
@@ -342,7 +342,7 @@ function loginPage_js() {
                 deviceOS();
                 // localStorage.setItem('deviceOS','iOS');
 
-                pastBetaVersionMark("loginPage");
+                // pastBetaVersionMark("loginPage");
                 chekSignIn();;
             },
         });

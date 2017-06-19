@@ -817,8 +817,7 @@ function viewingPage_js() {
     var viewingPage_onLoad = function() {
             viewingPage_elementsExtraJS();
 
-            pastBetaVersionMark("viewingPage");
-
+            // pastBetaVersionMark("viewingPage");
             viewer_photoQuery_service.execute({});
 
             ;

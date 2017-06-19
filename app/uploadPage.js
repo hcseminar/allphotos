@@ -733,7 +733,7 @@ function uploadPage_js() {
     var uploadPage_onLoad = function() {
             uploadPage_elementsExtraJS();
 
-            pastBetaVersionMark('uploadPage');
+            // pastBetaVersionMark('uploadPage');
             $("#uploadPage_uploadInProgressLabel").hide();
             $("#uploadPage_progressBarHTML").hide();;
 
