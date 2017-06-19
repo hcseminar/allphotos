@@ -16,12 +16,12 @@ function thumbnailB64data() {
 
         var nW = img.get(0).naturalWidth;
         // console.log('nW = ' + nW);
-        localStorage.setItem("uploadImgNaturalWidth",nW);
-        
+        localStorage.setItem("uploadImgNaturalWidth", nW);
+
         var nH = img.get(0).naturalHeight;
         // console.log('nH = ' + nH);
-        localStorage.setItem("uploadImgNaturalHeight",nH);
-        
+        localStorage.setItem("uploadImgNaturalHeight", nH);
+
         var x0, y0, x1, y1;
 
         if (nH > nW) { // picture taken portrait
@@ -93,7 +93,7 @@ function enlargePhoto(photoName, rotateClass) {
 
             $("#viewingPage_mosaicViewPopup").popup("open");
 
-            if ( rotateClass == "mosaicLargeRotate90cw" ) { // || rotateClass == "mosaicLargeRotate180" ) {
+            if (rotateClass == "mosaicLargeRotate90cw" || rotateClass == "mosaicLargeRotate180") {
 
                 jsImg.classList.add(rotateClass);
 
@@ -127,43 +127,25 @@ function enlargePhoto(photoName, rotateClass) {
 }
 
 function format2mosaicCaption(data) {
-    
-    console.log('data = '+JSON.stringify(data));
-    
+
+    console.log('data = ' + JSON.stringify(data));
+
     // data = [{"_id":"5943e464a4289334a2731ab1","dateTime":"2017/06/16 - 23:00","owner":"Eric Duchemin","exifCode":"6","peopleTags":"Japan Ken shooting","photoName":"6a9e15bd-7d5c-4a73-9de5-a1f17346eb6e.IMG_0719.JPG","likes":"0","acl":{"*":{"write":true,"read":true}},"_createdAt":"2017-06-16 14:00:04.323","_updatedAt":"2017-06-17 02:54:13.457","thumbnail_id":"594499c62e22d745017639c5"}]
 
     var winW = window.innerWidth;
     winW = winW * 0.90;
     var likeColWidth = 50;
-    var tagColWidth = winW - likeColWidth;   
-    
+    var tagColWidth = winW - likeColWidth;
+
     var photoNameWquotes = "'" + data[0].photoName + "'";
     var v1 = localStorage.getItem('hcjName');
     var v2 = localStorage.getItem('hcjFirstname');
-    var userWquotes = "'" + v2+' '+v1 + "'";
+    var userWquotes = "'" + v2 + ' ' + v1 + "'";
 
     var str = '<table><colgroup><col style="width:' + likeColWidth + 'px;"><col style="width:' + tagColWidth + 'px;"></colgroup><tbody><tr><td><div id="like' + data[0].photoName + '" class="photoButton likeButton" onclick="likePhoto(' + photoNameWquotes + ')">Like ' + data[0].likes + '</div></td><td><div id="caption' + data[0].photoName + '" class="imgCaption"><strong>' + data[0].peopleTags + '</strong><br><owner>' + data[0].owner + '</owner> - ' + data[0].dateTime + '</div></td></tr></tbody></table>';
 
     document.getElementById("mosaicViewCaption").innerHTML = str;
-    
+
     $("#viewingPage_mosaicViewCaptionPopup").popup("open");
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

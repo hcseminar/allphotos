@@ -39,6 +39,7 @@ function viewingPage_js() {
     var n2id_buf = {
         'mobilebutton_11': 'viewingPage_mobilebutton_11',
         'mobilebutton_18': 'viewingPage_mobilebutton_18',
+        'html_61': 'viewingPage_html_61',
         'html_12': 'viewingPage_html_12',
         'mobilegrid_34': 'viewingPage_mobilegrid_34',
         'mobilegridcell_35': 'viewingPage_mobilegridcell_35',
@@ -59,14 +60,13 @@ function viewingPage_js() {
         'mobilegridcell_26': 'viewingPage_mobilegridcell_26',
         'mobileimage_31': 'viewingPage_mobileimage_31',
         'mobilegridcell_29': 'viewingPage_mobilegridcell_29',
-        'mobilebutton_21': 'viewingPage_mobilebutton_21',
         'mobilegrid_53': 'viewingPage_mobilegrid_53',
         'mobilegridcell_54': 'viewingPage_mobilegridcell_54',
+        'mobilebutton_21': 'viewingPage_mobilebutton_21',
         'mobilegridcell_55': 'viewingPage_mobilegridcell_55',
         'mobilebutton_51': 'viewingPage_mobilebutton_51',
         'mosaicViewerImg': 'viewingPage_mosaicViewerImg',
-        'mobilebutton_60': 'viewingPage_mobilebutton_60',
-        'html_62': 'viewingPage_html_62'
+        'mobilebutton_60': 'viewingPage_mobilebutton_60'
     };
 
     if ("n2id" in window && window.n2id !== undefined) {
@@ -860,9 +860,6 @@ function viewingPage_js() {
 
         /* mosaicViewPopup */
         $("#viewingPage_mosaicViewPopup").popup("option", "positionTo", "#viewingPage_mobileheader");
-
-        /* mosaicViewCaptionPopup */
-        $("#viewingPage_mosaicViewCaptionPopup").popup("option", "positionTo", "#viewingPage_mobilefooter");
 
     };
 

@@ -58,6 +58,87 @@ function chekSignIn() {
 
 }
 
+var $timeout;
+function progressBar(i) {
+
+    var gate = localStorage.getItem('progressBarGate');
+
+   //  clearTimeout($timeout);
+
+    console.log('gate = '+gate);
+        
+
+    if ( gate == "1" ) {
+        
+        console.log("coming to setTimeout"); 
+        
+        //$timeout = setTimeout( function() {
+        setTimeout( function() {
+        
+            console.log('i = '+i);
+            
+            if ( i == 1 ) {    
+                
+                $("#progressCell1").show();
+                $("#progressCell2").hide();
+                $("#progressCell3").hide();
+            
+            }    
+            if ( i == 2 ) {
+
+                $("#progressCell1").hide();
+                $("#progressCell2").show();
+                $("#progressCell3").hide();
+
+            }
+            if ( i == 3 ) {
+
+                $("#progressCell1").hide();
+                $("#progressCell2").show();
+                $("#progressCell3").hide();
+
+            }
+
+            
+        /*    if ( i == 1 ) {    
+                
+                $("#progressCell1").css('background-color',"#049bd0");
+                $("#progressCell2").css('background-color',"#ffffff");
+                $("#progressCell3").css('background-color',"#ffffff");
+            
+            }    
+            if ( i == 2 ) {
+
+                $("#progressCell1").css('background-color',"#ffffff");
+                $("#progressCell2").css('background-color',"#049bd0");
+                $("#progressCell3").css('background-color',"#ffffff");
+
+            }
+            if ( i == 3 ) {
+
+                $("#progressCell1").css('background-color',"#ffffff");
+                $("#progressCell2").css('background-color',"#ffffff");
+                $("#progressCell3").css('background-color',"#049bd0");
+
+            } */
+            
+            if ( i < 3 ) {
+                i++;       
+            } else {
+                i=1;
+            }
+            progressBar(i);
+            
+        },500,i);
+
+    } else {
+        
+        clearTimeout($timeout);
+        
+    }
+    
+}
+
 function formatData2str(data) {
 
     str = data.htmlStr;

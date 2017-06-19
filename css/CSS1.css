@@ -1,7 +1,6 @@
 .roundCornerGrid{
     border-collapse: separate !important;
 }
-
 .contextDiv{
     position:relative;
 	z-index: 10;
@@ -101,6 +100,7 @@
     left: -100px;
     top:80px;
     margin-top:15px;
+    padding-top:10px;
 }
 .iOSrotate90cw { /* exif code 6 */
     -ms-transform: rotate(90deg);
@@ -141,6 +141,7 @@
     /* Chrome, Safari, Opera */
     transform: rotate(180deg);
     position:absolute;
+    left: 0;
 }
 .mosaicLargeRotate90cw { /* exif code 6 */
     -ms-transform: rotate(90deg);
@@ -158,6 +159,7 @@
     transform: rotate(180deg);
     position:absolute;
 }
+
 /* selectButton */
 .selectButton{
     font-family: "Helvetica";
@@ -198,4 +200,11 @@
     border-style: solid;
     border-width: 3px;
     border-color: #a2a2a2;
+}
+
+/* upload progressBar */
+.progressBarBlueCell{
+    background-color: #049bd0;
+    width:20px;
+    height:20px;
 }

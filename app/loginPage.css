@@ -7,6 +7,16 @@
 .ui-content.loginPage_mobilecontainer {
 	padding: 15px 15px 15px 15px;
 }
+/* html_48 */
+.loginPage_html_48 {
+	margin: 8px 5px 8px 5px;
+	font-weight: normal;
+	display: none;
+	width: 250px; height: 50px;
+}
+div.loginPage_html_48 {
+	overflow: auto;
+}
 /* mobilegrid_3 */
 .loginPage_mobilegrid_3 {
 	height: auto;

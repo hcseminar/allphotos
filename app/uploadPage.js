@@ -38,6 +38,7 @@ function uploadPage_js() {
     /* Object & array with components "name-to-id" mapping */
     var n2id_buf = {
         'mobilebutton_5': 'uploadPage_mobilebutton_5',
+        'html_86': 'uploadPage_html_86',
         'mobilegrid_17': 'uploadPage_mobilegrid_17',
         'mobilegridcell_18': 'uploadPage_mobilegridcell_18',
         'mobilegridcell_19': 'uploadPage_mobilegridcell_19',
@@ -522,14 +523,14 @@ function uploadPage_js() {
 
                 "target_transformation": function(value) {
 
-                    var deviceOS = localStorage.getItem('deviceOS');
+                    //var deviceOS = localStorage.getItem('deviceOS');
                     var exifCode;
 
-                    if (deviceOS == 'iOS') {
-                        exifCode = localStorage.getItem('exifCode');
-                    } else {
-                        exifCode = 'none';
-                    }
+                    //if ( deviceOS == 'iOS' ) {
+                    exifCode = localStorage.getItem('exifCode');
+/*} else {
+    exifCode = 'none';
+}*/
 
                     return exifCode;
                 },
@@ -622,9 +623,15 @@ function uploadPage_js() {
             Apperyio.processMappingAction(Apperyio.mappings["uploadPage_uploadPage_login_service_onsuccess_mapping_0"]);
 
             $("#uploadPage_uploadInProgressLabel").slideDown();
+
+            // $("#uploadPage_progressBarHTML").show();
+            // localStorage.setItem('progressBarGate',1);
+            // progressBar(1);
             // trigger Appery API to upload the file to the _files table
             uploadMultipleFilesHelper(picUpload_service, Apperyio('photoInput'));
-            // then onSuccess will retrieve file name to store in LS;
+            // then onSuccess will retrieve file name to store in LS
+
+            ;
         },
         "onError": function(jqXHR, textStatus, errorThrown) {
             $("#uploadPage_uploadInProgressLabel").slideUp();
@@ -646,6 +653,8 @@ function uploadPage_js() {
             Apperyio.processMappingAction(Apperyio.mappings["uploadPage_picInfo_create_service_onsuccess_mapping_0"]);
 
             $("#uploadPage_uploadInProgressLabel").slideUp();
+            // $("#uploadPage_progressBarHTML").hide();
+            // localStorage.setItem('progressBarGate',0);
             $("#uploadPage_photoInput").val("");
             $("#uploadPage_tagInput").val("");
 
@@ -656,6 +665,8 @@ function uploadPage_js() {
         },
         "onError": function(jqXHR, textStatus, errorThrown) {
             $("#uploadPage_uploadInProgressLabel").slideUp();
+            // $("#uploadPage_progressBarHTML").hide();
+            // localStorage.setItem('progressBarGate',0);
             $("#uploadPage_uploadButton").attr("disabled", false);
 
             alert("Oops! something went wrong. Please try again.");
@@ -724,8 +735,7 @@ function uploadPage_js() {
 
             pastBetaVersionMark('uploadPage');
             $("#uploadPage_uploadInProgressLabel").hide();
-
-            ;
+            $("#uploadPage_progressBarHTML").hide();;
 
             uploadPage_deviceEvents();
             uploadPage_windowEvents();

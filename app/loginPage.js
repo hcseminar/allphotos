@@ -37,6 +37,7 @@ function loginPage_js() {
 
     /* Object & array with components "name-to-id" mapping */
     var n2id_buf = {
+        'html_48': 'loginPage_html_48',
         'mobilegrid_3': 'loginPage_mobilegrid_3',
         'mobilegridcell_4': 'loginPage_mobilegridcell_4',
         'mobilegridcell_5': 'loginPage_mobilegridcell_5',

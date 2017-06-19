@@ -14,6 +14,16 @@
 .ui-content.uploadPage_mobilecontainer {
 	padding: 15px 15px 15px 15px;
 }
+/* html_86 */
+.uploadPage_html_86 {
+	margin: 8px 5px 8px 5px;
+	font-weight: normal;
+	display: none;
+	width: 250px; height: 50px;
+}
+div.uploadPage_html_86 {
+	overflow: auto;
+}
 /* mobilegrid_17 */
 .uploadPage_mobilegrid_17 {
 	height: auto;
@@ -102,7 +112,7 @@
 
 }
 .ui-btn.uploadPage_uploadButton {
-	margin: 20px 5px 4px 5px;
+	margin: 20px 5px 0px 5px;
 }
 /* uploadInProgressLabel */
 .uploadPage_uploadInProgressLabel {
