@@ -3,7 +3,7 @@
  */
 
 Apperyio.getProjectGUID = function() {
-    return '978a88be-e229-4d16-9f0c-afd594072543';
+    return 'c8549c18-155f-4a63-9a8b-6d935032b35c';
 };
 
 function navigateTo(outcome, useAjax) {
@@ -23,14 +23,14 @@ function setDetailContent(pageUrl) {
 }
 
 Apperyio.AppPages = [{
-    "name": "uploadPage",
-    "location": "uploadPage.html"
+    "name": "viewingPage",
+    "location": "viewingPage.html"
 }, {
     "name": "loginPage",
     "location": "loginPage.html"
 }, {
-    "name": "viewingPage",
-    "location": "viewingPage.html"
+    "name": "uploadPage",
+    "location": "uploadPage.html"
 }];
 
 function viewingPage_js() {
@@ -60,9 +60,9 @@ function viewingPage_js() {
         'mobilegridcell_26': 'viewingPage_mobilegridcell_26',
         'mobileimage_31': 'viewingPage_mobileimage_31',
         'mobilegridcell_29': 'viewingPage_mobilegridcell_29',
+        'mobilebutton_21': 'viewingPage_mobilebutton_21',
         'mobilegrid_53': 'viewingPage_mobilegrid_53',
         'mobilegridcell_54': 'viewingPage_mobilegridcell_54',
-        'mobilebutton_21': 'viewingPage_mobilebutton_21',
         'mobilegridcell_55': 'viewingPage_mobilegridcell_55',
         'mobilebutton_51': 'viewingPage_mobilebutton_51',
         'mosaicViewerImg': 'viewingPage_mosaicViewerImg',
@@ -395,6 +395,11 @@ function viewingPage_js() {
         ]
     };
 
+    Apperyio.mappings["viewingPage_viewer_selectPhoto_query_service_onsuccess_mapping_0"] = {
+        "homeScreen": "viewingPage",
+        "directions": []
+    };
+
     Apperyio.mappings["viewingPage_viewer_selectPhoto_query_service_onbeforesend_mapping_0"] = {
         "homeScreen": "viewingPage",
         "directions": [
@@ -451,11 +456,6 @@ function viewingPage_js() {
         }
 
         ]
-    };
-
-    Apperyio.mappings["viewingPage_viewer_selectPhoto_query_service_onsuccess_mapping_0"] = {
-        "homeScreen": "viewingPage",
-        "directions": []
     };
 
     Apperyio.mappings["viewingPage_viewer_selectPhoto_delete_service_onsuccess_mapping_0"] = {

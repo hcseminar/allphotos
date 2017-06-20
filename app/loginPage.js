@@ -3,7 +3,7 @@
  */
 
 Apperyio.getProjectGUID = function() {
-    return '978a88be-e229-4d16-9f0c-afd594072543';
+    return 'c8549c18-155f-4a63-9a8b-6d935032b35c';
 };
 
 function navigateTo(outcome, useAjax) {
@@ -23,14 +23,14 @@ function setDetailContent(pageUrl) {
 }
 
 Apperyio.AppPages = [{
-    "name": "uploadPage",
-    "location": "uploadPage.html"
+    "name": "viewingPage",
+    "location": "viewingPage.html"
 }, {
     "name": "loginPage",
     "location": "loginPage.html"
 }, {
-    "name": "viewingPage",
-    "location": "viewingPage.html"
+    "name": "uploadPage",
+    "location": "uploadPage.html"
 }];
 
 function loginPage_js() {

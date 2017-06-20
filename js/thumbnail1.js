@@ -22,6 +22,9 @@ function thumbnailB64data() {
         // console.log('nH = ' + nH);
         localStorage.setItem("uploadImgNaturalHeight", nH);
 
+
+        // NO Base64 ENCODING ANY LONGER
+        /* 
         var x0, y0, x1, y1;
 
         if (nH > nW) { // picture taken portrait
@@ -54,9 +57,14 @@ function thumbnailB64data() {
 
         c.parentNode.removeChild(c);
 
+        */
+
         if (gate4callbk == 0) {
+            
             thumbnail_create_service.execute({});
+            
             gate4callbk = 1;
+            
         }
 
     });

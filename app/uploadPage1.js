@@ -3,7 +3,7 @@
  */
 
 Apperyio.getProjectGUID = function() {
-    return '978a88be-e229-4d16-9f0c-afd594072543';
+    return 'c8549c18-155f-4a63-9a8b-6d935032b35c';
 };
 
 function navigateTo(outcome, useAjax) {
@@ -23,14 +23,14 @@ function setDetailContent(pageUrl) {
 }
 
 Apperyio.AppPages = [{
-    "name": "uploadPage",
-    "location": "uploadPage.html"
+    "name": "viewingPage",
+    "location": "viewingPage.html"
 }, {
     "name": "loginPage",
     "location": "loginPage.html"
 }, {
-    "name": "viewingPage",
-    "location": "viewingPage.html"
+    "name": "uploadPage",
+    "location": "uploadPage.html"
 }];
 
 function uploadPage_js() {
@@ -216,6 +216,11 @@ function uploadPage_js() {
         ]
     };
 
+    Apperyio.mappings["uploadPage_picInfo_create_service_onsuccess_mapping_0"] = {
+        "homeScreen": "uploadPage",
+        "directions": []
+    };
+
     Apperyio.mappings["uploadPage_picInfo_create_service_onbeforesend_mapping_0"] = {
         "homeScreen": "uploadPage",
         "directions": [
@@ -345,7 +350,9 @@ function uploadPage_js() {
 
                 "target_transformation": function(value) {
 
-                    return localStorage.getItem("thumbnail_id");
+                    // no encoded thumbnail any longer
+                    // return localStorage.getItem("thumbnail_id");
+                    return 'N/A';
                 },
                 "target": "$['body']['thumbnail_id']"
 
@@ -445,11 +452,6 @@ function uploadPage_js() {
         }
 
         ]
-    };
-
-    Apperyio.mappings["uploadPage_picInfo_create_service_onsuccess_mapping_0"] = {
-        "homeScreen": "uploadPage",
-        "directions": []
     };
 
     Apperyio.mappings["uploadPage_thumbnail_create_service_onsuccess_mapping_0"] = {
@@ -556,6 +558,11 @@ function uploadPage_js() {
         ]
     };
 
+    Apperyio.mappings["uploadPage_uploadPage_VersionCheck2reload_service_onsuccess_mapping_0"] = {
+        "homeScreen": "uploadPage",
+        "directions": []
+    };
+
     Apperyio.mappings["uploadPage_uploadPage_VersionCheck2reload_service_onbeforesend_mapping_0"] = {
         "homeScreen": "uploadPage",
         "directions": [
@@ -579,11 +586,6 @@ function uploadPage_js() {
         ]
     };
 
-    Apperyio.mappings["uploadPage_uploadPage_VersionCheck2reload_service_onsuccess_mapping_0"] = {
-        "homeScreen": "uploadPage",
-        "directions": []
-    };
-
     Apperyio.datasources = Apperyio.datasources || {};
 
     window.picUpload_service = Apperyio.datasources.picUpload_service = new Apperyio.DataSource(HCJquizDB__files_upload_service, {
@@ -600,6 +602,8 @@ function uploadPage_js() {
             // console.log('filename = '+v);
             localStorage.setItem('photoFilename', v);
 
+            // no encoded thumbnail HOWEVER still loading the img in the browser is needed to get natural width and height
+            $("#uploadPage_uploadInProgressLabel").text("obtaining the picture's information ... pls wait.");
             thumbnailB64data();
 
             ;
@@ -655,11 +659,12 @@ function uploadPage_js() {
             $("#uploadPage_uploadInProgressLabel").slideUp();
             // $("#uploadPage_progressBarHTML").hide();
             // localStorage.setItem('progressBarGate',0);
-            $("#uploadPage_photoInput").val("");
-            $("#uploadPage_tagInput").val("");
 
             // $("#uploadPage_uploadSuccessTweetPopup").popup("open");
             setTimeout(function() {
+                $("#uploadPage_photoInput").val("");
+                $("#uploadPage_tagInput").val("");
+                $("#uploadPage_uploadInProgressLabel").text("upload in progress ... pls wait.");
                 alert('Your picture was successfully uploaded.');
             }, 800);
         },
@@ -684,7 +689,8 @@ function uploadPage_js() {
             Apperyio.processMappingAction(Apperyio.mappings["uploadPage_thumbnail_create_service_onsuccess_mapping_0"]);
             // console.log('data= '+JSON.stringify(data));
             // data= {"_id":"5944c60e6b0182322f93c22b","_createdAt":"2017-06-17 06:02:54.318"}
-            localStorage.setItem("thumbnail_id", data._id);
+            // localStorage.setItem("thumbnail_id",data._id);
+            $("#uploadPage_uploadInProgressLabel").text("recording the picture's information.");
             try {
                 picInfo_create_service.execute({});
             } catch (e) {
